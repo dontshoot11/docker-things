@@ -14,6 +14,12 @@ services:
         restart: always
         ports:
             - '5555:5000'
+        environment:
+            MYSQL_HOST: 'mysql'
+            MYSQL_USER: 'root'
+            MYSQL_PORT: '3306'
+            MYSQL_ROOT_PASSWORD: 'password'
+            MYSQL_DATABASE: 'time_db'
         volumes:
             - /app/node_modules
             - ./api:/app
